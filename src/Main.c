@@ -115,7 +115,7 @@ void Setup(AlxWindow* w){
 		(Vec2){ GetWidth(),GetHeight() },
 		(Vec2){ -25.0f,-50.0f },
 		(Vec2){ 0.01f,0.01f },
-		(float)GetHeight() / (float)GetWidth()
+		(float)GetWidth() / (float)GetHeight()
 	);
 
 	tb = TextBox_New(Input_New(50,1),(Rect){0.0f,0.0f,2300.0f,100.0f},ALXFONT_PATHS_HIGH,50,100,BLACK);
