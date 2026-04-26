@@ -1,193 +1,52 @@
-# Gui_GeoGebra2_3.0
+## Overview
+The project appears to be a basic C application for a GUI-based tool called "GeoGebra 2.3". The application is designed to interpret and execute custom language commands, allowing users to perform various mathematical and geometric operations.
 
+## Features
+- Custom language interpretation and execution
+- Graphical user interface (GUI) for command input/output
+- Supports basic mathematical and geometric operations
 
-## Project Overview
-
-This project implements specialized functionality related to geogebra2_3.0.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for geogebra2_3.0
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
+- `src/`: Contains the source code, including `Main.c` as the entry point.
+- `Makefile.linux`, `Makefile.windows`, `Makefile.wine`, `Makefile.web`: Makefiles for building the project on Linux, Windows, Wine (Linux cross-compilation for Windows), and Emscripten (WebAssembly) environments.
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC or Clang)
 - Make utility
 - Standard development tools
+- Libraries needed:
+  - `X11` for GUI rendering on Linux
+  - `png`, `jpeg` libraries for image handling
 
-### Build Steps
+## Build & Run
+The project uses Makefiles to manage the build process. Here are the basic steps:
 
-1. Navigate to project directory:
-```bash
-cd Gui_GeoGebra2_3.0
-```
-
-2. Build the project:
-```bash
+### Building
+To build the project for a specific operating system, use the following command:
+```sh
 make -f Makefile.(os) all
 ```
+Replace `(os)` with `linux`, `windows`, `wine`, or `web` depending on your target platform.
 
-3. For clean rebuild:
-```bash
+#### Clean and Rebuild
+For a clean rebuild (removing previous build artifacts):
+```sh
 make -f Makefile.(os) clean
 make -f Makefile.(os) all
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
+### Executing
+To execute the built application:
+```sh
 make -f Makefile.(os) exe
 ```
+This will compile and run the application.
 
-## Project Organization
-
-```
-Gui_GeoGebra2_3.0/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
+### Clean Build
+To clean up build artifacts:
+```sh
+make -f Makefile.(os) clean
 ```
 
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+## Note
+The project structure includes specific Makefiles for different environments, ensuring that the correct settings are applied for each platform.
